@@ -1,17 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Simple Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Texas Movement International, a multi-vertical systems company led by Alexander Mathai.">
+  <title>Home | Texas Movement International</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a> | 
-        <a href="about.html">About</a> | 
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">Texas Movement International</a>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-    </nav>
-    
-    <h1>Welcome to My Website!</h1>
-    <p>This is the home page. I built this using GitHub.</p>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <!-- <img src="images/logo.png" alt="Texas Movement International logo" class="logo"> -->
+        <p class="eyebrow">Welcome</p>
+        <h1>Systems that move people, businesses, and ideas forward.</h1>
+        <p class="lead">Texas Movement International (TMI) is a multi-vertical systems company founded and led by Alexander Mathai.</p>
+        <div class="btn-row">
+          <a href="about.html" class="btn">Learn More</a>
+          <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>How We Work</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Diagnose</h3>
+            <p>We find what is actually broken before building anything.</p>
+          </div>
+          <div class="card">
+            <h3>Build</h3>
+            <p>We design and implement systems that fit the real problem.</p>
+          </div>
+          <div class="card">
+            <h3>Transfer</h3>
+            <p>We hand off systems your team can run without us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>Meet the Founder</h2>
+        <!-- <img src="images/alexander.jpg" alt="Alexander Mathai" class="portrait"> -->
+        <p>Alexander Mathai is the Founder and President of TMI. With a background in civil and structural engineering and biomechanics, he approaches business the way an engineer approaches a structure: find the load, fix the foundation, build to last.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Texas Movement International LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
