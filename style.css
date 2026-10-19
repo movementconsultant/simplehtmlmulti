@@ -16,6 +16,9 @@ body {
  background: var(--bg);
  line-height: 1.65;
  margin: 0;
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
 }
 
 .container { width: 100%; max-width: 1050px; margin: 0 auto; padding: 0 20px; }
@@ -63,22 +66,24 @@ img { max-width: 100%; height: auto; display: block; }
  background: linear-gradient(135deg, var(--navy), #1e3a6e);
  color: #fff;
  padding: 80px 0;
+ text-align: center;
 }
-.hero h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; max-width: 720px; margin-top: 0; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; margin-top: 0; }
 .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: #93c5fd; margin-bottom: 10px; }
-.lead { font-size: 1.15rem; max-width: 640px; }
+.lead { font-size: 1.15rem; max-width: 640px; margin: 0 auto; }
 .hero .lead { color: #e2e8f0; }
 
 .page-title {
  background: var(--bg-alt);
  padding: 50px 0 40px;
  border-bottom: 1px solid #e5e7eb;
+ text-align: center;
 }
 .page-title h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--navy); margin-top: 0; }
 .page-title .lead { color: var(--muted); margin-top: 6px; }
 
 /* Buttons */
-.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; justify-content: center; }
 .btn {
  display: inline-block;
  background: var(--accent);
@@ -88,5 +93,98 @@ img { max-width: 100%; height: auto; display: block; }
  border-radius: var(--radius);
  font-weight: 600;
  border: 2px solid var(--accent);
+ text-align: center;
 }
-.btn:hover
+.btn:hover { opacity: 0.9; text-decoration: none; }
+.btn-outline { background: transparent; border-color: #fff; }
+.btn-outline:hover { background: #fff; color: var(--navy); }
+.btn-large { padding: 16px 32px; font-size: 1.1rem; }
+
+/* Sections & Cards */
+.section { padding: 60px 0; }
+.section.alt { background: var(--bg-alt); }
+h2 { color: var(--navy); font-size: 1.6rem; margin-bottom: 14px; margin-top: 0; }
+h3 { color: var(--navy); margin-bottom: 8px; margin-top: 0; }
+p { margin-bottom: 14px; }
+
+.cards {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 24px;
+ margin-top: 20px;
+}
+.card {
+ background: #fff;
+ border: 1px solid #e5e7eb;
+ border-radius: var(--radius);
+ padding: 32px 24px;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+.card-icon { font-size: 2.5rem; margin-bottom: 16px; }
+.card h3 { margin-bottom: 12px; }
+.card p { flex-grow: 1; color: var(--muted); margin-bottom: 24px; }
+
+/* Video Embed Wrappers (Dummy-Proof Responsive) */
+.video-wrapper {
+ position: relative;
+ padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+ height: 0;
+ overflow: hidden;
+ max-width: 100%;
+ margin: 24px 0;
+ border-radius: var(--radius);
+ background: #000;
+}
+.video-wrapper iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border: 0;
+}
+
+.video-wrapper-vertical {
+ position: relative;
+ padding-bottom: 177.77%; /* 9:16 Aspect Ratio for Shorts/TikTok */
+ height: 0;
+ overflow: hidden;
+ max-width: 350px;
+ margin: 24px auto;
+ border-radius: var(--radius);
+ background: #000;
+}
+.video-wrapper-vertical iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border: 0;
+}
+
+/* Footer */
+.site-footer {
+ background: var(--navy);
+ color: #cbd5e1;
+ text-align: center;
+ padding: 32px 0;
+ font-size: 0.9rem;
+ margin-top: auto;
+}
+.site-footer p { margin: 0; }
+
+/* Small screens */
+@media (max-width: 560px) {
+ .nav-wrap { justify-content: center; }
+ .hero { padding: 56px 0; }
+ .section { padding: 44px 0; }
+}
